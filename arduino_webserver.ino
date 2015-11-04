@@ -1,30 +1,35 @@
+/* 
   Web server sketch for IDE v1.0.5 and w5100/w5200
   Originally posted November 2013 by SurferTim
   Last modified 6 June 2015      
 */
 
 #include <SPI.h>
-//#include <Ethernet.h>
+#include <Ethernet.h>
 #include <SD.h>
-#include <EthernetV2_0.h>
-#include <utility/w5200.h>
-#include <utility/socketV2_0.h>
+#include <utility/w5100.h>
+#include <utility/socket.h>
 
 // comment out the next line to eliminate the Serial.print stuff
 // saves about 1.6K of program memory
-//#define ServerDEBUG
+#define ServerDEBUG
 
 // this must be unique
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xEC };
 
 // change to your network settings
-IPAddress ip( 10,110,7,54 );
-IPAddress gateway( 10,110,7,1 );
+IPAddress ip( 192,168,0,54 );
+//IPAddress gateway( 192,168,2,1 );
 IPAddress subnet( 255,255,255,0 );
 
 EthernetServer server(80);
 
-const char legalChars[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_~";
+const int Ceiling_Heater_Pin = 27; // Ceiling Heater Output Pin
+const int Inside_Light_Pin = 28; // Inside Lights Output Pin
+const int Exhaust_Fan_Pin = 29; // Exhaust Fan Output Pin
+const int Outside_Light_Pin = 30; // Outside Lights Output Pin
+
+const char legalChars[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_~%&=";
 unsigned int requestNumber = 0;
 
 unsigned long connectTime[MAX_SOCK_NUM];
@@ -39,14 +44,18 @@ void setup()
 {
   Serial.begin(115200);
 
-  // disable w5100 SPI while starting SD
-  digitalWrite(10,HIGH);
-  // set SS pin 53 as Output or SPI interface will not work.
-  pinMode(53,OUTPUT);
+  pinMode(Ceiling_Heater_Pin, OUTPUT);
+  pinMode(Inside_Light_Pin, OUTPUT);
+  pinMode(Exhaust_Fan_Pin, OUTPUT);
+  pinMode(Outside_Light_Pin, OUTPUT);
 
 #ifdef ServerDEBUG
   Serial.print(F("Starting SD.."));
 #endif
+
+  // disable w5100 SPI while setting up SD
+  pinMode(10, OUTPUT);                       // set the SS pin as an output (necessary!)
+  digitalWrite(10, HIGH);                    // but turn off the W5100 chip!
 
   if(!SD.begin(4)) {
 #ifdef ServerDEBUG
@@ -59,7 +68,10 @@ void setup()
 #endif
   }
 
-  Ethernet.begin(mac, ip, gateway, gateway, subnet);
+  //Ethernet.select(53);  // Use this to change the ethernet pin 10 which is the default ss pin
+  Ethernet.begin(mac, ip, subnet);
+  /*// disable w5100 SPI
+  digitalWrite(10,HIGH);*/
 
   delay(2000);
   server.begin();
@@ -178,9 +190,13 @@ void checkServer() {
           Serial.print(F("file = "));
           Serial.println(requestBuffer);
 #endif
-          pch = strtok(tBuf,".");
+       /*   if (strtok(tBuf,"/IO_Status")) {
+            GetIOState(client);
+            Serial.println("Scanned");
+          }*/
+            pch = strtok(tBuf,".");
 
-          if(pch != NULL) {
+              if(pch != NULL) {
             pch = strtok(NULL,".");
 
             if(pch != NULL) strncpy(fileType,pch,4);
@@ -190,13 +206,14 @@ void checkServer() {
             Serial.print(F("file type = "));
             Serial.println(fileType);
 #endif
-          }
+              }
+          //}
 
 #ifdef ServerDEBUG
           Serial.print(F("method = "));
           Serial.println(methodBuffer);
 #endif
-          if(strcmp(methodBuffer,"GET") != 0 && strcmp(methodBuffer,"HEAD") != 0) {
+          if(strcmp(methodBuffer,"GET") != 0 && strcmp(methodBuffer,"HEAD") != 0 && strcmp(methodBuffer, "POST")!= 0) {
             sendBadRequest(client);
             return;
           }
@@ -205,17 +222,59 @@ void checkServer() {
           Serial.print(F("params = "));
           Serial.println(paramBuffer);
 
+      /*    if (strcmp(paramBuffer, "Inon") == 0) {
+            digitalWrite(Inside_Light_Pin, HIGH);
+            //Serial.println("Inside Lights Turned On");
+          }
+          if (strcmp(paramBuffer, "Inoff") == 0) {
+            digitalWrite(Inside_Light_Pin, LOW);
+            //Serial.println("Inside Lights Turned Off");
+          }
+
+          if (strcmp(paramBuffer, "Outon") == 0) {
+            digitalWrite(Outside_Light_Pin, HIGH);
+            //Serial.println("Outside Light Turned On");
+          }
+          if (strcmp(paramBuffer, "Outoff") == 0) {
+            digitalWrite(Outside_Light_Pin, LOW);
+            //Serial.println("Outside Light Turned Off");
+          }
+
+          if (strcmp(paramBuffer, "Fanon") == 0) {
+            digitalWrite(Exhaust_Fan_Pin, HIGH);
+            //Serial.println("Exhaust Fan Turned On");
+          }
+          if (strcmp(paramBuffer, "Fanoff") == 0) {
+            digitalWrite(Exhaust_Fan_Pin, LOW);
+            //Serial.println("Exhaust Fan Turned Off");
+          }
+
+          if (strcmp(paramBuffer, "CeilHtron") == 0) {
+            digitalWrite(Ceiling_Heater_Pin, HIGH);
+            //Serial.println("Ceiling Heater Turned On");
+          }
+          if (strcmp(paramBuffer, "CeilHtroff") == 0) {
+            digitalWrite(Ceiling_Heater_Pin, LOW);
+            //Serial.println("Ceiling Heater Turned Off");
+          }
+
+          if (strcmp(fileName,"/IO_STATUS") == 0) {
+            GetIOState(client);
+            Serial.println("Ceiling Heater Turned Off");
+          }*/
+
           Serial.print(F("protocol = "));
           Serial.println(protocolBuffer);
 #endif          
           // if dynamic page name 
-          if(strcmp(requestBuffer,"/HELLO.PHP") == 0) {
+          if(strcmp(requestBuffer,"/MYTEST.PHP") == 0) {
 #ifdef ServerDEBUG
             Serial.println(F("dynamic page"));            
 #endif
           }
           else {
-            if(strcmp(fileName,"/") == 0) {
+            //if(strcmp(fileName,"/") == 0) {
+            if(strcmp(fileName,"/") == 0 || strcmp(fileName,"/IO_STATUS")!=0) {
               strcpy(fileName,"/INDEX.HTM");
               strcpy(fileType,"HTM");
 
@@ -289,7 +348,7 @@ void checkServer() {
                 strcat_P(tBuf,PSTR("\r\nConnection: close\r\n\r\n"));
                 client.write(tBuf);
 
-                if(strcmp(methodBuffer,"GET") == 0)  {
+                if(strcmp(methodBuffer,"GET") == 0 || (strcmp(methodBuffer, "POST") == 0)) {
 #ifdef ServerDEBUG
                   Serial.print(F("send.."));
 #endif
@@ -479,3 +538,17 @@ void checkSockStatus()
     socketStat[i] = W5100.readSnSR(i);
   }
 }
+
+void GetIOState(EthernetClient cl)
+{
+  Serial.println("GetIO State Started");
+  if (digitalRead(28)) {
+    cl.println("Inside Light State: ON");
+    Serial.println("Inside Light On");
+  }
+  else {
+    cl.println("Inside Light State: OFF");
+    Serial.println("Inside Light Off");
+  }
+}
+
