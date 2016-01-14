@@ -13,6 +13,7 @@
 			<img src='LAYCH.GIF' alt='Laying Chicken' align='right' width='110' height='89' />
 			<title>EGG PLANT</title>
 			<link rel="stylesheet" href="mystyle.css">
+            <script type="text/javascript" src="js/commons.js"></script>
 			<H2>The Egg Plant Project</H2>
 			<hr />
 		  </head>
@@ -20,26 +21,26 @@
 		
 		<div id="content">
 			<div class="box">
-				<p>Inside Temperature:</p>
+				<p id="interior-temp">Inside Temperature:</p>
 			</div>
 			</br>
 			<div class="box">
-				<p>Ammonia Reading:</p>
+				<p id="ammonia-level">Ammonia Reading:</p>
 			</div>
 			</br>
 			<div class="box">
-				<p>Door Status:</p>
+				<p id="door-status">Door Status:</p>
 			</div>
 			</br>
 			<div class="box">
-				<p>Inside Light Status:</p>
+				<p id="interior-light-status">Inside Light Status:</p>
 			</div>
 			</br>
 			<div class="box">
-				<p>Outside Light Status:</p>
+				<p id="exterior-light-status">Outside Light Status:</p>
 			</div>
 		</div><!-- #content -->
-		
+		<script>window.onload=onLoadOfIndexPage;</script>
 	</div><!-- #wrapper -->
 
 </body>
