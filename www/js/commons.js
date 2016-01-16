@@ -1,4 +1,8 @@
-
+/**
+*   Created by jhogue 1/14/2016
+*
+*
+*/
 
 
 function onLoadOfIndexPage()
@@ -9,6 +13,8 @@ function onLoadOfIndexPage()
     updateDoorStatus("Open");
     updateInteriorLightStatus("Off");
     updateExteriorLightStatus("On");
+    updateHeatLampStatus("On");
+    updateFanStatus("On");
 }
 
 /**
@@ -74,6 +80,12 @@ function updateHeatLampStatus(heatStatus)
     document.getElementById("heat-lamp-status").innerHTML = "Heat Lamp Status: " + heatStatus;
 }
 
+//*********************************************************************************//
+//*********************************************************************************//
+//  These are our configuration functions that allow us to set the thresholds
+//*********************************************************************************//
+//*********************************************************************************//
+
 /**
  *  This function sets the minimum temp that we will allow the coop to reach before the heat lamps are turned on.
  *
@@ -100,6 +112,11 @@ function setMaximumAmmoniaLevel(level)
 {
     
 }
+
+//*********************************************************************************//
+//*********************************************************************************//
+
+
 
 //*********************************************************************************//
 //*********************************************************************************//
