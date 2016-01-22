@@ -14,36 +14,76 @@
 			<title>EGG PLANT</title>
 			<link rel="stylesheet" href="mystyle.css">
             <script type="text/javascript" src="js/commons.js"></script>
-			<H2>The Egg Plant Project</H2>
+			
+             <H2>The Egg Plant Project</H2>
 			<hr />
 		  </head>
 		</div><!-- #header -->
-		<!--<table style="position:absolute;left:0%;top:128px;width:40%;height:208px;z-index:1;" id="Table1">
+        <table style="position:relative;left:35%;top:30%;width:302px;height:312px;z-index:6;" id="Table1">
             <tr>
-                <td class="cell0" id="interior-temp"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Inside Temperature:</span></td>
+                <td class="cell0" id="interior-temp"><span style=""> Inside Temperature: </span></td>
             </tr>
             <tr>
-                <td class="cell0" id="ammonia-level"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Ammonia Reading:</span></td>
+                <td class="cell0" id="ammonia-level"><span style=""> Ammonia Reading:</span></td>
             </tr>
             <tr>
-                <td class="cell0" id="door-status"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Door Status:</span></td>
+                <td class="cell0" id="door-status"><span style=""> Door Status:</span></td>
             </tr>
             <tr>
-                <td class="cell0" id="interior-light-status"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Inside Light Status:</span></td>
+                <td class="cell0" id="interior-light-status"><span style=""> Inside Light Status:</span></td>
             </tr>
             <tr>
-                <td class="cell0" id="exterior-light-status"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Outside Light Status:</span></td>
+                <td class="cell0" id="exterior-light-status"><span style=""> Outside Light Status:</span></td>
             </tr>
             <tr>
-                <td class="cell0" id="heat-lamp-status"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Heat Lamp Status:</span></td>
+                <td class="cell0" id="heat-lamp-status"><span style=""> Heat Lamp Status:</span></td>
             </tr>
             <tr>
-                <td class="cell0" id="fan-status"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"> Fan Status:</span></td>
+                <td class="cell0" id="fan-status"><span style=""> Fan Status:</span></td>
             </tr>
         </table>
--->
-
         
+        <table style="position:relative;left:35%;top:30%;width:300px;height:312px;z-index:7;" id="Table2">
+            <tr>
+                <td class="cell0" id="max-temp"><span style=""> Maximum Temperature&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; degrees </span></td>
+            </tr>
+            <tr>
+                <td class="cell0" id="min-temp"><span style=""> Minimum Temperature&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; degrees</span></td>
+            </tr>
+            <tr>
+                <td class="cell0" id="door"><span style=""> Door</span></td>
+            </tr>
+            <tr>
+                <td class="cell0" id="interior-light"><span style=""> Inside Light</span></td>
+            </tr>
+            <tr>
+                <td class="cell0" id="exterior-light"><span style=""> Outside Light</span></td>
+            </tr>
+            <tr>
+                <td class="cell0" id="heat-lamp"><span style=""> Heat Lamp</span></td>
+            </tr>
+            <tr>
+                <td class="cell0" id="fan"><span style=""> Fan</span></td>
+            </tr>
+            <tr>
+                <td class="cell0" id="save"><span style=""> </span></td>
+            </tr>
+        </table>
+        <input class="number0" type="number" id="Editbox1" style="position:absolute;left:621px;top:451px;width:63px;height:19px;line-height:19px;z-index:8;" name="MaxTemp" value="" maxlength="3" required>
+        <input class="number0" type="number" id="Editbox2" style="position:absolute;left:621px;top:497px;width:63px;height:19px;line-height:19px;z-index:9;" name="MinTemp" value="" maxlength="3" required>
+        <input class="number0" type="button" id="Button1" name="DoorOpen" value="Open" style="position:absolute;left:621px;top:538px;width:56px;height:25px;z-index:10;">
+        <input type="button" id="Button2" name="DoorClose" value="Close" style="position:absolute;left:686px;top:538px;width:56px;height:25px;z-index:11;">
+        <input type="button" id="Button3" name="InsideLightOn" value="Turn On" style="position:absolute;left:621px;top:586px;width:56px;height:25px;z-index:12;">
+        <input type="button" id="Button4" name="InsideLightOff" value="Turn Off" style="position:absolute;left:686px;top:586px;width:56px;height:25px;z-index:13;">
+        <input type="button" id="Button5" name="OutsideLightOn" value="Turn On" style="position:absolute;left:621px;top:627px;width:56px;height:25px;z-index:14;">
+        <input type="button" id="Button6" name="OutsideLightOff" value="Turn Off" style="position:absolute;left:686px;top:627px;width:56px;height:25px;z-index:15;">
+        <input type="button" id="Button7" name="HeatLampOn" value="Turn On" style="position:absolute;left:621px;top:672px;width:56px;height:25px;z-index:16;">
+        <input type="button" id="Button8" name="FanOn" value="Turn On" style="position:absolute;left:621px;top:715px;width:56px;height:25px;z-index:17;">
+        <input type="button" id="Button9" name="HeatLampOff" value="Turn Off" style="position:absolute;left:686px;top:672px;width:56px;height:25px;z-index:18;">
+        <input type="button" id="Button10" name="FanOff" value="Turn Off" style="position:absolute;left:686px;top:715px;width:56px;height:25px;z-index:19;">
+        <input type="button" id="Button11" name="Save" value="Save" style="position:absolute;left:686px;top:715px;width:56px;height:25px;z-index:19;">
+        
+		<!--        
 		<div id="content">
 			<div class="box">
 				<p id="interior-temp">Inside Temperature:</p>
@@ -67,6 +107,7 @@
 				<p id="fan-status">Fan Status:</p>
 			</div>
 		</div><!-- #content -->
+        
         
 		<script>window.onload=onLoadOfIndexPage;</script>
 	</div><!-- #wrapper -->
