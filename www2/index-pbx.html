@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" type="image/x-ico" href="images/icons-sprite/favicon.ico" />
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles/streemcast.css"/>
+<link rel="stylesheet" href="styles/normalize.css"/>
+<link rel="stylesheet" href="styles/jquery-ui.css"/>
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="styles/responsive.css" />
+<link rel="stylesheet" href="styles/appliance.css" />
+<script src="scripts/jquery.js" type="text/JavaScript"></script>
+<script src="scripts/jquery-ui.min.js" type="text/JavaScript"></script>
+<script src="scripts/persist-min.js" type="text/javascript"></script>
+<script src="scripts/global.js" type="text/JavaScript"></script>
+<script src="scripts/commons.js" type="text/JavaScript"></script>	
+<script src="scripts/appliance.js" type="text/JavaScript"></script>
+<script src="scripts/help.js" type="text/JavaScript"></script>
+<script src="scripts/header.js" type="text/JavaScript"></script>
+<script src="scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="scripts/validation.js" type="text/javascript"></script>
+<title>Cleo Streem</title>
+
+</head>
+
+<body>
+    <!-- start page header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="header-logo">
+				<span>The Egg Plant</span>
+				<!--<img src="images/icons-sprite/logo.png" style="width: 280px; height: 34px;"></img>-->
+	    	</div>
+
+            <div class="admin-nav">
+                <ul class="admin-nav-list">
+                    <li class="admin-item">
+                        <a class="admin-item-link current">
+                            <span class="site-admin-label">Settings</span>
+                        </a>
+                    </li>
+                                        
+                    <li class="admin-item">
+                        <a class="admin-item-link ">
+                            <span class="site-admin-label" onClick="onClickOfWebcam()">Webcam</span>
+			            </a>	
+                    </li>
+
+                </ul>
+            </div>
+		</div>
+    </div>
+    <!-- end page header -->
+	<div id="headerMsg" class="header-msg" hidden>
+		<span class="rectangle-icon"><span class="question-mark-icon"></span></span>
+		<p class="header-msg-main">A <span onclick="servicesRestartBtnClick()"><a href="#">restart</a></span> of the services is required for these changes to take effect.</p>
+	</div>
+	
+	<div id="messageDia" hidden="hidden">
+		<span><img id="loading-popup" align="middle" src="images/loading.gif" />
+		
+			<p style="display: inline-block" id="loading-text-id">   <br />
+			</p>
+		</span>
+	</div>
+	<!--  MESSAGE DIALOG POPU -->
+	
+	
+    <div>
+	<div class="container page-container">
+            <!-- begin sidebar -->
+            <div class="col col-aside">
+		<div class="aside-header">
+		    <h2 class="aside-title">Status</h2>                        
+		</div>
+		<div class="col-body">
+		    <ul>
+			<li>
+			    <span class="streem-version">Egg Plant Version 1.0</span>
+			</li>
+			<li>
+			    <div class="status errorSystem">
+					<h3>Error</h3>	
+					<span class="sub" id="errorStatusId">Stuff</span>
+			    </div>
+			    <div class="status stopped">
+					<h3>Stopped</h3> 
+					<span class="sub" id="stoppedStatusId">Stuff</span>
+			    </div>
+			    <div class="status running">
+					<h3>Running</h3>
+				</div>					
+			</li>
+			<li> 
+			    <button type="button" id="restartServerBtn" name="reboot" value="Reboot" title="Reboot The Egg Plant" onclick="serverRestartBtnClick();">Reboot</button>
+			</li>
+			<li>
+			    <hr/>
+			</li>
+                
+            <li>
+			    <label id="insideTempStatus">Inside Temperature: 87 degrees</label>
+            </li>
+
+            <li>
+                <label id="ammoniaReadingStatus">Ammonia Reading: Test</label>
+            </li>
+
+            <li>
+                <label id="doorStatus">Door: Open</label>
+            </li>
+
+            <li>
+                <label id="insideLightStatus">Inside Light: On</label>
+            </li>
+
+            <li>
+                <label id="outsideLightStatus">Outside Light: Off</label>
+            </li>
+
+            <li>
+                <label id="heatLampStatus">Heat Lamp: On</label>
+            </li>
+
+            <li>
+                <label id="fanStatus">Fan: Off</label>
+			</li>
+
+			</ul>
+		</div>
+            </div>
+            <!-- end sidebar -->
+
+            <!-- begin main content -->
+            <div class="main-content col">
+                <div class="main-container">
+                    <!-- begin main header -->
+                    <div class="main-header">
+                        <span class="icon appliance-green"></span>
+                        <h2 class="main-title">
+                            Coop Settings
+			</h2>	
+                    </div>
+                    <!-- end main header -->
+       
+                    <!-- begin main body -->
+                    <div class="main-body">
+                        <form class="add-new-contact" method="post" id="applianceSettings" name="AddRcpt" novalidate="novalidate">
+                            <fieldset class="main">
+                                <ul>
+                                    <li>
+                                        <label>Maximum Temperature</label>
+										<input type="number" id="mail_server_port"/>
+                                    </li>
+                                    <li>
+                                        <label>Minimum Temperature</label>
+                                        <input type="number" id="ip_address"/>
+                                    </li>
+                                    <li>
+                                        <label for="subnet_mask">Door</label>
+                                        <button type="Submit" name="Submit" value="Save" id="saveBtnId">Open</button>
+								        <button type="Submit" name="Submit" value="Save" id="saveBtnId">Close</button>
+                                    </li>				    
+                                    <li id="default-gateway">
+                                        <label for="default_gateway">Inside Light</label>
+                                        <button type="Submit" name="Submit" value="Save" id="saveBtnId">On</button>
+								        <button type="Submit" name="Submit" value="Save" id="saveBtnId">Off</button>
+                                    </li>
+				    
+									<li>
+										<label for="enable_dhcp">Outside Light</label>
+                                        <button type="Submit" name="Submit" value="Save" id="saveBtnId">On</button>
+								        <button type="Submit" name="Submit" value="Save" id="saveBtnId">Off</button>
+									</li>
+                                    
+				                    <li>
+                                        <label for="mail_server">Heat Lamp</label>
+                                        <button type="Submit" name="Submit" value="Save" id="saveBtnId">On</button>
+								        <button type="Submit" name="Submit" value="Save" id="saveBtnId">Off</button>
+                                    </li>
+                                    
+                                    <li class="space-below">
+										<label for="pbx_gateway">Fan</label>
+								        <button type="Submit" name="Submit" value="Save" id="saveBtnId">On</button>
+								        <button type="Submit" name="Submit" value="Save" id="saveBtnId">Off</button>
+									</li>
+                                </ul>
+			    			</fieldset>
+						
+							<!-- begin main footer -->
+							<div class="main-footer"> 
+								<button type="Submit" name="Submit" value="Save" id="saveBtnId">Save</button>
+								<button type="button" class="grey" name="Cancel" value="Cancel">Cancel</button>
+							</div>
+                                <!-- end main footer -->
+                        </form>
+		    </div>
+                    <!-- end main body -->
+		</div>
+            </div>
+            <!-- end main content -->
+        </div>
+    </div>
+</body>
+</html>

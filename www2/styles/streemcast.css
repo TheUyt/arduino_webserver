@@ -1,0 +1,974 @@
+/*
+ * This is a part of the Streem Center (R) system.
+ * Copyright (C) 2005-2007 Streem Communications
+ * All Rights Reserved.
+ */
+
+/* CSS Document */
+
+/* common elements */
+
+/* body */
+/*
+body {
+	background-color: #ffffff;
+	/* background-color: #EEF0FF; */
+	/* background-color: #EEFFFD; */
+	/* background-color: ThreedHighlight; */
+	/* background-color: #FBFBFB;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+*/
+
+/* hyperlink */
+/*
+A:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: BLUE;
+}
+
+A:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: BLUE;
+}
+*/
+/*
+A:hover {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	/*color: #FF9900;*/
+}
+*/
+/* para */
+p {
+
+}
+
+p.success {
+	font-family: Verdana, Helvetica, Geneva, SunSans-Regular;
+	font-size: 12px;
+	font-style: italic;
+	color: Green;
+	text-align: center;
+}
+
+p.warning {
+	font-family: Verdana, Helvetica, Geneva, SunSans-Regular;
+	font-size: 12px;
+	font-style: italic;
+	color: Orange;
+	text-align: left;
+}
+
+p.failure {
+	font-family: Verdana, Helvetica, Geneva, SunSans-Regular;
+	font-size: 12px;
+	font-style: italic;
+	color: Red;
+	text-align: left;
+}
+
+/* lists */
+li {
+
+	margin-top: 10px;
+}
+
+ul {
+
+}
+
+ol {
+
+}
+
+span.action {
+	text-decoration: underline;
+	font-style: italic;
+}
+
+span.required {
+	font-weight: bold;
+	color: #003580;
+}
+
+/* useful DIVs i.e. page layout */
+div.top {
+	/* side link container */
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 750px;
+}
+
+div.top div.logo {
+	/* side link container */
+	position: absolute;
+	padding-left: 0px;
+	padding-top: 0px;
+}
+
+div.top div.App {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	position: absolute;
+	font-size: large;
+	color: #003580;
+	padding-top: 20px;
+	left: 150px;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+div.top div.User {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	position: relative;
+	top: 68px;
+	height: 20px;
+	background-color: #003580;
+	/* background-color: #0099CC; */
+}
+
+div.User span.User {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	position: absolute;
+	right: 0px;
+	padding-top: 1px;
+	color: #FFFFFF;
+}
+
+/* hyperlink */
+div.User span.User A:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: Black;
+/* 	color: rgb(243, 152, 71); */
+}
+
+div.User span.User A:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: Black;
+}
+
+div.User span.User A:hover {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: Black;
+}
+
+
+div.top span.Nav {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	position: absolute;
+	height:auto;
+	left: 175px;
+	top: 92px;
+	font-size:8px;
+	/* color: White; */
+}
+
+div.User span.User image.help {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	height: 20px;
+	width: 17px;
+	border: 0px;
+}
+
+div.sideLink {
+	/* side link container */
+	position: absolute;
+	left: 0px;
+	top: 68px;
+	width: 140px;
+	padding-left: 10px;
+	background-color: #C6C6C6;
+	/*background-color: #D2EAFF; */
+}
+
+div.sideLink div.menuDiv {
+	min-height: 540px;
+	height: auto !important;
+	height: 540px;
+}
+
+div.sideLink div.tips {
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	left: 5px;
+}
+
+div.sideLink div {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	bottom: 100px;
+/*
+	border: 2px solid #000077;
+*/
+}
+
+div.mmenu {
+	position: absolute;
+	left: 0px;
+	top: 68px;
+	color: #FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+div.mmenu a {
+	color:#FFFFFF;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+div.mmenu a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+div.mmenu a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	color: #F99549;
+}
+div.smenu {
+	position:absolute;
+	left: 0px;
+	top: 108px;
+	border-top-width:thin;
+	border-top-color:#DBDBDB;
+	border-top-style:solid;
+	/* background-color: #FFFFFF; */
+	width: 750px;
+	height: 10px;
+}
+div.smenu span.pointer {
+	position:relative;
+	top: -6px;
+}
+
+div.mainPart {
+	/* main container */
+	position: absolute;
+	left: 25px;
+	top: 120px;
+	width: 725px;
+}
+
+div.mainPart div.main {
+	/* borders and padding for
+	the div inside the main
+	container */
+/*
+	border: 2px solid #007700;
+*/
+	min-height: 475px;
+	height: auto !important;
+	/* height: 475px; */
+}
+
+div.mainPart div {
+	/* borders and padding for
+	the div inside the main
+	container */
+/*
+	border: 2px solid #007700;
+*/
+}
+
+div.mainPart div.intro {
+	/* borders and padding for
+	the div inside the main
+	container */
+
+	left: 0%;
+	width: 50%;
+	height: 500px;
+}
+
+div.mainPart div.login {
+	/* borders and padding for
+	the div inside the main
+	container */
+
+	position: absolute;
+	top: 0px;
+	left: 175px;
+	width: 500px;
+	height: 350px;
+	vertical-align: middle;
+}
+div.login span.login {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	/*position: absolute;
+	bottom: 0px; */
+	background-repeat:no-repeat;
+}
+div.sideLink div a {
+	/* links in the side link
+	conatiner */
+	width: 100%;
+	margin-bottom: 2px;
+}
+div.sideLink div a:hover {
+	/* hover effect for the
+	links in the side link
+	conatiner */
+/*	background-color: #bbffff;
+*/
+}
+
+div.footer {
+	/* side link container */
+	position: relative;
+	left: -25px;
+	width: 750px;
+	padding-top: 2px;
+}
+div.footer div.border {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	height: 10px;
+	left: 0px;
+	background-color: #003580;
+	width: 750px;
+}
+div.footer div.copyright {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	height: 10px;
+	font-size: 10px;
+	padding-top: 5px;
+    padding-bottom: 7px;
+	padding-left: 25px;
+}
+div.footer span.version {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	position: absolute;
+	height: 10px;
+	font-size: 10px;
+	padding-left: 375px;
+}
+div.copyright span.modified {
+	/* borders and padding for
+	the div inside the side
+	link container */
+	position: absolute;
+	height: 10px;
+	right: 0px;
+	font-size: 10px;
+}
+div.hide {
+	display:none;
+}
+div.show {
+	display:block;
+}
+/* some useful text styles */
+.small {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+.big {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+.bodystyle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.welcome {
+	color: white;
+	font-size: 12px;
+}
+
+/* some useful boxes */
+.box1 {
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+	border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 {
+	border-width: 3px;
+	border-style: solid;
+	padding: 5px;
+}
+
+
+/* default table attributes */
+/*
+table {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+
+caption {
+}
+
+th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+*/
+/* different cell types common to Forms and Reports */
+td.caption {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	text-align: right;
+}
+
+td.instructions {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+/* Nav table */
+table.Nav {
+	font-family: Arial, Helvetica, sans-serif;
+	width: 725px;
+	font-size: 10px;
+	border-style: solid;
+	border-color:#FFFFFF;
+	border-width: medium;
+	
+}
+
+table.Nav td {
+	width: 100px;
+	height: 39px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 23px;
+	margin-top: 0px;
+	padding-top: 2px;
+	vertical-align:top;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+table.Nav a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#000000;
+	text-decoration: none;
+}
+
+table.Nav a:hover {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color:#000000;
+	text-decoration: none;
+}
+
+table.Nav a:visited {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#000000;
+	text-decoration: none;
+}
+
+/* Status table */
+table.Status {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	width: 725px;
+	BORDER-RIGHT: rgb(0,0,0) 1px solid; 
+	BORDER-TOP: rgb(0,0,0) 1px solid; 
+	BORDER-LEFT: rgb(0,0,0) 1px solid;
+	BORDER-BOTTOM: rgb(0,0,0) 1px solid
+}
+
+table.Status table {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	width: 725px;
+	border-bottom-width:thin;
+	border-style:solid;
+	border-color:#000000;
+}
+
+table.Status th.colHeader {
+	background-color: rgb(212, 226, 241);
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+table.Status td.category {
+	background-color: rgb(212, 226, 241);
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+table.Status td.values {
+	background-color: rgb(242, 242, 242);
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+table.Status td.title {
+	background-color:#FFFFFF;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+table.Utility {
+	
+}
+
+table.Utility  tr{
+	border-bottom: 1px solid #E5E5E4;
+	display:block;
+	height:30px;
+}
+
+table.Utility  tr td{
+	display:block;
+	margin-top:20px;
+}
+
+
+/* Form attributes */
+table.Forms {
+	border:none !important;
+	background:#F9F9F5;
+}
+
+table.Forms tbody.show {display: block; display: table-row-group;}
+table.Forms tbody.hide {display: none;}
+
+table.Forms table {	
+	border:none !important;
+	outline:none !important;
+} 
+
+table.Forms table tr td {
+	position:relative;
+}
+
+
+table.Forms table tr td:first-child{
+	width: 150px;
+	padding-left:25px;
+	text-align:left;
+}
+
+table.Forms table tr td input[type="text"]{
+	height: 30px;
+	padding: 5px;
+	width: 60%;
+}
+
+table.Forms table tr td:first-child input[type="checkbox"]{
+	position: absolute;
+	right:0;
+	top: 3px;
+}
+
+table.Forms table tr td[colspan="2"] input[type="checkbox"]{
+	position: relative;
+}
+
+table.Forms table tr:last-child {
+	height: 50px;
+}
+
+table.Forms caption {
+	margin: 10px;
+	caption-side: top;
+	text-align: left;
+	font-weight: bold;
+	font-size: large;
+}
+
+table.Forms td.grid {
+    border: 1px solid gray;
+}
+
+table.Forms td.required {
+	color: #3796CA;
+	content: " *";
+}
+
+table.Forms td.required:after {
+	content: "*";
+}
+
+/* for IE */
+table.Forms col.key {
+	font-weight: bold;
+/*
+	font-size: larger;
+	color: Blue;
+*/
+}
+
+/* for Mozilla */
+table.Forms td:first-child,
+table.Forms td:first-child+td+td {
+	font-weight: bold;
+/*
+	font-size: larger;
+	color: Blue;
+*/
+}
+
+/* new form for recipient columns */
+table.FormsLeftAlign {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-width: 5px;
+    border-style: double;
+    border-color: gray;
+    border-collapse: collapse;
+    background-color: #FFF5EE;
+    background-color: #F0FFEE;
+    background-color: #EEEEEE;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
+    width: 725px;
+}
+
+table.FormsLeftAlign tbody.show {display: block; display: table-row-group;}
+table.FormsLeftAlign tbody.hide {display: none;}
+
+table.FormsLeftAlign table {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-width: 1px;
+    border-style: none;
+    border-color: gray;
+    border-collapse: collapse;
+}
+
+table.FormsLeftAlign caption {
+    margin: 10px;
+    caption-side: top;
+    text-align: left;
+    font-weight: bold;
+    font-size: large;
+}
+
+table.FormsLeftAlign td {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-width: 1px;
+    border-style: none;
+    border-color: none;
+    border-right-style: none;
+    border-left-style: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: normal;
+}
+
+table.FormsLeftAlign th {
+    
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+}
+
+table.FormsLeftAlign td.grid {
+    border: 1px solid gray;
+}
+
+table.FormsLeftAlign td.required {
+	color: rgb(243, 152, 71);
+	content: " *";
+}
+
+table.FormsLeftAlign td.required:after {
+	content: "*";
+}
+
+/* for IE */
+table.FormsLeftAlign col.key {
+	font-weight: bold;
+/*
+	font-size: larger;
+	color: Blue;
+*/
+}
+
+/* for Mozilla */
+table.FormsLeftAlign td:first-child,
+table.FormsLeftAlign td:first-child+td+td {
+/*
+	font-weight: bold;
+
+	font-size: larger;
+	color: Blue;
+*/
+}
+
+
+td.Submit {
+	text-align: center;
+}
+
+/* Form elements 
+form {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+
+input:focus {
+	background-color: Yellow;
+}
+
+input {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+textarea {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+textarea:focus {
+	background-color: Yellow;
+}
+
+select {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}*/
+
+/* Report attributes */
+table.Reports {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-width: 5px;
+	border-style: double;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: #FFF5EE;
+	background-color: #F0FFEE;
+	background-color: InfoBackground;
+	background-color: #EEEEEE;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	padding-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 10px;
+	width: 725px;
+}
+
+table.Reports col {
+	font-size: larger;
+}
+
+/* for IE */
+table.Reports col.key {
+	font-weight: bold;
+/*
+	font-size: larger;
+	color: Blue;
+*/
+}
+
+/* for Mozilla */
+table.Reports td:first-child,
+table.Reports td:first-child+td+td {
+	font-weight: bold;
+/*
+	font-size: larger;
+	color: Blue;
+*/
+}
+
+/* for IE */
+table.Reports col.value {
+/*
+	color: Red;
+*/
+}
+
+/* for Mozilla */
+table.Reports td:first-child+td,
+table.Reports td:first-child+td+td+td {
+/*
+	color: Red;
+*/
+}
+
+/* for Mozilla */
+table.Reports tr:first-child {
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+/*
+	font-size: larger;
+	color: Blue;
+*/
+}
+
+table.Reports colgroup.key {display: table-column-group;}
+
+table.Reports .hide {display: none;}
+
+table.Reports table {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-width: 1px;
+	border-style: none;
+	border-color: gray;
+	border-collapse: collapse;
+}
+
+/* for Mozilla */
+table.Reports table tr:first-child {
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+/*
+    font-size: larger;
+    color: Blue;
+*/
+}
+
+table.Reports caption {
+	margin: 10px;
+	caption-side: top;
+	text-align: left;
+	font-weight: bold;
+	font-size: large;
+}
+
+table.Reports td {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-width: 1px;
+	border-style: none;
+	border-color: none;
+	border-right-style: none;
+	border-left-style: none;
+	padding-left: 2px;
+	padding-right: 2px;	
+}
+
+table.Reports td.grid {
+    border: 1px solid gray;
+}
+
+table.Reports td.required {
+	color: Red;
+	content: "*";
+}
+
+table.Reports td.required:after {
+	content: "*";
+}
+
+#DEFPG {
+	width:600px;
+	background-color:#000000;
+	min-height:300px;
+	padding:0;
+	margin:0px auto 0px auto;
+}
+#DEFHD {
+	height:10px;
+	background-color:#777777;
+	width:600px;
+	margin:0;
+	padding:0;
+	clear:both;
+}
+#DEFTXT {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	width:600px;
+	background-color:#000000;
+	margin:0;
+	padding:0;
+}
+#DEFTXT h1 {
+	color:#FFFFFF;
+	font-size:20px;
+	text-align:center;
+	margin-top: 8px;
+	padding:0;
+}
+#DEFTXT p {
+	color:#FFFFFF;
+	font-size:12px;
+	text-align:left;
+	margin: 20px;
+	padding:0;
+}
+#DEFTXT ul {
+	color:#FFFFFF;
+	list-style:circle;
+	text-align:left;
+	margin-left:80px;
+	padding:0;
+}
+#DEFFORM {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	width:600px;
+	background-color:#000000;
+	font-size:12px;
+	color:#FFFFFF;
+	margin-top:0;
+	padding:0;
+}
+#DEFFOOT1 {
+	background-color:#FFCC33;
+	height:10px;
+	width:600px;
+}
+#DEFFOOT2 {
+	background-color:#003580;
+	height:40px;
+	width:600px;
+	margin:0;
+}
+#DEFEND {
+	background-color:#FFFFFF;
+	width:600px;
+	margin-top:-10px;
+}
+	

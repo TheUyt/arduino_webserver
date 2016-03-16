@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" type="image/x-ico" href="images/icons-sprite/favicon.ico" />
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles/streemcast.css"/>
+<link rel="stylesheet" href="styles/normalize.css"/>
+<link rel="stylesheet" href="styles/jquery-ui.css"/>
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="styles/responsive.css" />
+<link rel="stylesheet" href="styles/appliance.css" />
+<script src="scripts/jquery.js" type="text/JavaScript"></script>
+<script src="scripts/jquery-ui.min.js" type="text/JavaScript"></script>
+<script src="scripts/persist-min.js" type="text/javascript"></script>
+<script src="scripts/global.js" type="text/JavaScript"></script>
+<script src="scripts/commons.js" type="text/JavaScript"></script>	
+<script src="scripts/appliance.js" type="text/JavaScript"></script>
+<script src="scripts/help.js" type="text/JavaScript"></script>
+<script src="scripts/header.js" type="text/JavaScript"></script>
+<script src="scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="scripts/validation.js" type="text/javascript"></script>
+<title>Cleo Streem</title>
+
+</head>
+
+<body>
+    <!-- start page header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="header-logo">
+				<span class="logo"></span>
+	    	</div>
+
+            <div class="admin-nav">
+                <ul class="admin-nav-list">
+                    <li class="admin-item">
+                        <a class="admin-item-link current">
+                            <span class="site-admin-label">Settings</span>
+                        </a>
+                    </li>
+                                        
+                    <li class="admin-item">
+                        <a class="admin-item-link ">
+                            <span class="site-admin-label" onClick="onClickOfUserManager()">User Manager</span>
+			</a>	
+                    </li>
+
+                    <li class="admin-item">
+                        <a class="admin-item-link">
+                            <span class="site-admin-label" onClick="javascript:DoShowThisHelp('HelpAppliance/index.html')">Help</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="profile-nav">
+                <ul class="profile-nav-list">	
+                    <li class="nav-item profile">
+                        <a class="nav-item-link profile-link">
+                            <span class="profile-avatar-me"></span>
+                            <span class="profile-name" onClick="javascript:OnProfile();">Admin</span>                            
+                        </a>
+						
+						<div class="profile-widget" id="popout" style="display: none; z-index: 3;">
+							<span class="profile-avatar-me"></span>
+							<div class="profile-widget-main">
+                                                       <h2>Admin</h2>
+                                                       <p>streemfax@streem.net</p>
+                                                       <span class="change-password blue" onclick="onClickOfManageProfile()">Manage Profile</span>
+                                                       <!--  <a class="change-password blue" href="MasterUser.php?Menu=mn1&Button-but1&Option=2&Caption=Edit%20User&CHLD=1">Manage Profile</a> -->
+                                                </div>
+
+							<div class="profile-widget-footer">
+								<a class="logout" onclick="onClickOfLogout()">Logout</a>
+							</div>
+						</div>
+						
+						<div class="profile-admin" id="popout2" style="display: none; z-index: 3;">
+							<ul>
+							<li>
+								<a href="/StreemAlert/SearchUser.php?appMenu=UMT&Menu=USER&Button=but1&Option=16&Caption=Users">
+									<span class="icon little-user"></span>
+									<p>User</p>
+								</a>
+							</li>
+							<li>
+								<a href="SearchUser.php?Menu=USER&Caption=Users">
+									<span class="icon little-setting" ></span>
+									<p>Admin</p>
+								</a>
+							</li>
+							</ul>
+						</div>
+                    </li>
+                </ul>
+            </div>
+		</div>
+    </div>
+    <!-- end page header -->
+	<div id="headerMsg" class="header-msg" hidden>
+		<span class="rectangle-icon"><span class="question-mark-icon"></span></span>
+		<p class="header-msg-main">A <span onclick="servicesRestartBtnClick()"><a href="#">restart</a></span> of the services is required for these changes to take effect.</p>
+	</div>
+	
+	<div id="messageDia" hidden="hidden">
+		<span><img id="loading-popup" align="middle" src="images/loading.gif" />
+		
+			<p style="display: inline-block" id="loading-text-id">   <br />
+			</p>
+		</span>
+	</div>
+	<!--  MESSAGE DIALOG POPU -->
+	
+	
+    <div>
+	<div class="container page-container">
+            <!-- begin sidebar -->
+            <div class="col col-aside">
+		<div class="aside-header">
+		    <h2 class="aside-title">Status
+		    <span class="sub online hide"><span class="circle"></span> Online</span>
+		    <span class="sub offline"><span class="circle"></span> Offline</span>
+		    
+		    </h2>                        
+		</div>
+		<div class="col-body">
+		    <ul>
+			<li>
+			    <span class="streem-version">Streem Center Version 7.1</span>
+			</li>
+			<li>
+			    <div class="status errorSystem">
+					<h3>Error</h3>	
+					<span class="sub" id="errorStatusId">Stuff</span>
+			    </div>
+			    <div class="status stopped">
+					<h3>Stopped</h3> 
+					<span class="sub" id="stoppedStatusId">Stuff</span>
+			    </div>
+			    <div class="status running">
+					<h3>Running</h3>
+				</div>					
+			</li>
+			<li>
+			    <button type="button" id="restartBtn" name="restart" value="Restart Services" title="Restart Streem Center Services" onclick="servicesRestartBtnClick()" >Restart Services</button>
+			    <button type="button" id="restartServerBtn" name="reboot" value="Reboot" title="Reboot Streem Center Appliance" onclick="serverRestartBtnClick();">Reboot</button>
+			</li>
+			<li>
+			    <hr />
+			</li>
+			</ul>
+		</div>
+            </div>
+            <!-- end sidebar -->
+
+            <!-- begin main content -->
+            <div class="main-content col">
+                <div class="main-container">
+                    <!-- begin main header -->
+                    <div class="main-header">
+                        <span class="icon appliance-green"></span>
+                        <h2 class="main-title">
+                            Appliance Settings
+			</h2>
+			<span class="toggle-hints">
+			    <label for="show-hints">Show Hints</label>
+			    <input type="checkbox" id="show-hints" onchange="toggleHints();" />
+			</span>
+                    </div>
+                    <!-- end main header -->
+       
+                    <!-- begin main body -->
+                    <div class="main-body">
+                        <form class="add-new-contact" method="post" id="applianceSettings" name="AddRcpt" novalidate="novalidate">
+                            <fieldset class="main">
+                                <ul>							
+                                    <li>
+                                        <label for="appliance_name">Appliance Name</label>
+                                        <input type="text" id="appliance_name" name="appliance_name"/>
+										<p class="hint hide">Choose a name for your appliance and enter it here to help you identify it on your network. The name must start with a letter, be less than 19 characters, and contain no spaces.</p>
+                                    </li>
+                                    <li>
+                                        <label for="ip_address">IP Address</label>
+                                        <input type="text" id="ip_address" name="ip_address" class="ip" value=""/>
+                                    </li>
+                                    <li>
+                                        <label for="subnet_mask">Subnet Mask</label>
+                                        <input type="text" class="ip" id="subnet_mask" name="subnet_mask" value=""/>
+                                    </li>				    
+                                    <li id="default-gateway" class="space-below">
+                                        <label for="default_gateway">Default Gateway</label>
+                                        <input type="text" class="ip" id="default_gateway" name="default_gateway" value=""/>
+										<p class="hint hide">Enter a static IP address of your choice for direct access to your appliance.</p>
+                                    </li>
+				    
+									<li class="space-below">
+										<label for="enable_dhcp">DNS Settings</label>
+												   <!--     <input type="checkbox"
+										   id="enable_dhcp"
+										   name="enable_dhcp"
+										   title="Enable DHCP"
+										   onchange="toggleChild('dns_settings');"
+										   value="" />
+									<label for="enable_dhcp">Enable DHCP Server</label> -->
+										<ul class="subfields" rel="dns_settings">
+											<li>
+												<label for="primary_dns_server">Primary DNS Server</label>
+												<input type="text" id="primary_dns_server" name="primary_dns_server"/>
+											</li>
+											<li>
+												<label for="secondary_dns_server">Secondary DNS Server</label>
+												<input type="text" id="secondary_dns_server" name="secondary_dns_server" />
+											</li>					    
+										</ul>
+										<p class="hint hide">Enter the address of your DNS server. The secondary DNS server is optional.</p>
+									</li>
+                                    
+				                    <li>
+                                        <label for="mail_server">Mail Server</label>
+                                        <input type="text" class="ip" id="mail_server" name="mail_server" value="" />
+										<span class="subfield">
+											<label for="mail_server_port">Port</label>
+											<input type="number" class="port" id="mail_server_port" name="mail_server_port" />
+										</span>
+										<p class="hint hide">Enter an SMTP mail server and port from which the appliance can send outbound email.</p>
+                                    </li>
+								</ul>
+                  			</fieldset>
+ 
+							<fieldset>
+								<legend>Telephony Settings</legend>
+								<ul>
+									<li>
+										<label>PRI Settings</label>
+										<label for="pri_variant">Switch Variant Type</label>
+										<select name="pri_variant" id="pri_variant" title="Switch Variant Type">
+											<option></option>
+										</select>
+									</li>
+									<li>
+										<label>&nbsp;</label>
+										<label for="line_encoding">Line Encoding</label>
+										<select name="line_encoding" id="line_encoding" title="Line Encoding">
+											<option></option>
+										</select>
+									</li>
+									<li class="space-below">
+										<label>&nbsp;</label>
+										<label for="framing_type">Framing Type</label>
+										<select name="framing_type" id="framing_type" title="Framing Type">
+											<option></option>
+										</select>
+										<p class="hint hide">Choose the PRI settings based on the information you received from your telco provider. If you don't have this information, contact your telco provider.</p>
+									</li>                            
+									<li>
+										<label for="csid">Called Subscriber ID (CSID)</label>
+										<input type="text" id="csid" name="csid" value="" />
+										<p class="hint hide">Choose a subscriber ID to display on the remote machine when receiving faxes from this appliance. CSID must be 30 characters or less.</p>
+									</li>
+
+									<li>
+										<label for="inbound_ports">Inbound Ports</label>
+										<select id="inbound_ports" name="inbound_ports"></select>
+										<p class="hint hide">Choose the number of ports to dedicate to inbound faxes. Ports not dedicated are used for both inbound and outbound faxes. Dedicating ports to inbound faxes helps ensure you can receive faxes even during periods of heavy outbound traffic.</p>
+									</li>
+									<li>
+										<label for="outbound_translations" class="sub_head">Outbound Translations</label>
+										<table class="sub_fieldset" id="sortable">
+											<thead id="ot_control">
+											<tr>
+												<td>
+													<label>Order</label>
+												</td>
+												<td>
+												<label>Pattern</label>
+												<input type="text"
+													   name="ot_pattern"
+													   id="ot_pattern"
+													   title="Outbound Translation Pattern"
+													   value="" />
+												</td>
+												<td>
+												<label>Translation</label>
+												<input type="text"
+													   name="ot_translation"
+													   id="ot_translation"
+													   title="Outbound Translation"
+													   value="" />
+												</td>
+												<td>
+												<label>Comments</label>
+												<input type="text"
+													   name="ot_comments"
+													   id="ot_comments"
+													   title="Outbound Translation Comments"
+													   value="" />
+												</td>
+												<td>
+												<label>Action</label>
+												<button type="button"
+													name="add"
+													id="ot_add"
+													title="Add to Outbound Translations List"
+													onclick="addToList(event);">Add</button>
+												</td>						    
+											</tr>
+											</thead>
+											<tbody id="ot_list">
+											</tbody>
+										</table>
+										<p class="hint hide">Add entries to the translation table. Outbound fax numbers that match a pattern are translated into a fully normalized fax number. The numbers are translated using the first matching pattern. You can drag rows in the translation table up and down to reorder them.</p>
+									</li>
+								</ul>
+							</fieldset>	
+					
+							<fieldset>
+								<legend>Monitoring Settings</legend>
+								<ul>							
+									<li>
+										<label for="admin_email">Admin Email Contact</label>
+										<input type="email" id="admin_email" class="email" name="admin_email" value="" />
+									</li>
+									<li>
+										<label for="inbound_fax">Inbound Fax Number</label>
+										<input type="tel" id="inbound_fax" class="phone" name="inbound_fax" value="" />
+										<p class="hint hide">Enter an email address of your choice to receive notifications. Enter an unassigned inbound fax number to test Streem fax capabilities.</p>
+									</li>
+								</ul>				
+							</fieldset>
+							<!-- begin main footer -->
+							<div class="main-footer"> 
+								<button type="Submit" name="Submit" value="Save" id="saveBtnId">Save</button>
+								<button type="button" class="grey" name="Cancel" value="Cancel">Cancel</button>
+							</div>
+                                <!-- end main footer -->
+                        </form>
+		    </div>
+                    <!-- end main body -->
+		</div>
+            </div>
+            <!-- end main content -->
+        </div>
+    </div>
+</body>
+</html>

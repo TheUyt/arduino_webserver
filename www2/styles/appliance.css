@@ -1,0 +1,457 @@
+/* main content form */
+label {
+    vertical-align: middle;
+    width: 18%;
+    text-align: left;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #504740;
+}
+
+label.sub_head {
+    vertical-align: top;
+}
+
+label.t38 {
+	width: 50%;
+}
+
+label.auth_req {
+	width: 50%;
+}
+
+li.t38.innerE {
+	margin-left: 30px; 
+}
+
+input ~ label {
+    font-weight: normal;
+    width: auto;
+}
+
+label ~ label {
+    width: 15%;
+}
+
+form {
+    margin-top: 0px;
+}
+
+form fieldset {
+    border: 0px;
+}
+
+form fieldset legend {
+  color: #807d7c;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 50px 0 0px 0;
+}
+
+form fieldset ul {
+  padding-left: 0;
+}
+
+form fieldset ul li .subfield label {
+  width: auto;
+  margin: 0 10px;
+}
+
+form fieldset ul li ul.subfields {
+  margin-left: 18%;
+  padding: 0;
+}
+
+form fieldset ul li ul.subfields.auth{
+  margin-left: 20%;  
+}
+
+form fieldset ul li ul.subfields li label {
+  width: 20%;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* styles the placeholders, do not combine into a single rule */
+input::-webkit-input-placeholder {
+    font-weight: light;
+    font-size: 80%;
+}
+input:moz-placeholder {
+    font-weight: light;
+    font-size: 80%;
+}
+input::moz-placeholder {
+    font-weight: light;
+    font-size: 80%;
+}
+input:-ms-input-placeholder {
+    font-weight: light;
+    font-size: 80%;
+}
+
+form input:not([type="submit"]),
+form select {
+    margin-bottom:10px;
+    background:#fcfcfc;
+    border: 1px solid #c4c4bc;
+    font-size: 1.2em;
+    padding: .45em;
+}
+
+form input:not([type="submit"]):not([type="checkbox"]):not([type="number"]),
+form fieldset li select {
+    width: 25%;
+}
+
+form input[type="number"] {
+    width: 7%;
+    min-width: 5em;
+}
+
+form input[type="checkbox"] {
+    vertical-align: middle;
+    margin-bottom: 0px;
+}
+
+.hint {
+    margin-left: 18%;
+    color: #948c85;
+    font-size: 16px;
+    background: #f2eee9;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.space-below {
+    margin-bottom: 50px;
+}
+
+.toggle-hints {
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    color: #504740;
+    display: inline-block;
+    line-height: 39px;
+    vertical-align: middle;
+}
+
+.toggle-hints * {
+    vertical-align: middle;
+}
+
+.toggle-hints label {
+    width: auto;
+}
+
+/* the internal table with subfields */
+.sub_fieldset {
+    display: inline-block;
+    border: 1px solid gray;
+    width: auto !important;
+}
+
+.sub_fieldset tr td:first-of-type {
+    padding-left: 15px;
+}
+.sub_fieldset tr td:first-of-type {
+    padding-right: 15px;
+}					
+
+.sub_fieldset thead {
+    background: #f9f9f6;
+    padding: 15px;
+}
+
+.sub_fieldset thead tr td label {
+    display: block;
+    clear: both;
+}
+
+.sub_fieldset thead tr td input[type="text"],
+.sub_fieldset tbody tr td input[type="text"]{
+    width: 80% !important;
+}
+
+.sub_fieldset tbody {
+    background: #FFF;
+    padding: 15px;
+}
+
+.sub_fieldset tbody tr td span {
+    color: #666463;
+    font-size: 16px;
+}
+
+/* sortable list */
+#sortable tbody tr {
+    cursor: pointer;
+}
+
+/* aside */
+
+.col-aside {
+    position: relative;
+    background: white;
+    border: 1px solid #E5E5E4;
+    min-height: initial;
+    color: #837C75;
+    width: 18%;
+    margin: 0 1%;
+    padding: 0;
+}
+
+@media screen and (max-width: 960px) {
+    .col-aside {
+        width: auto;
+        margin: 0;
+    }
+}
+
+.col-aside .aside-header {
+    background: #F9F9F5;
+    border-bottom: 1px solid #E5E5E4;
+    width: 100%;
+    padding: 10px 1em;    
+}
+
+.col-aside .aside-header .aside-title {
+    margin: 0;
+}
+
+.col-aside .aside-header .aside-title .offline .circle {
+    font-size: 20px;
+    color: #f12e37;
+}
+
+.col-aside .aside-header .aside-title .online .circle {
+    font-size: 20px;
+    color: #3f9e01;
+}
+
+.col-aside .aside-title .sub {
+    float: right;
+}
+
+.col-aside ul {
+    padding: 15px 10px 25px 10px;
+}
+
+.col-aside ul li {
+    margin-bottom: 20px;
+}
+
+.col-aside .streem-version {
+    
+}
+
+.col-aside .status {
+}
+
+.col-aside .status h3 {
+    background-repeat: no-repeat;
+    background-position: left top;
+    text-indent: 25px;
+    color: #504740;
+    font-size: 18px;
+    line-height: 18px;
+    margin: .25em 0;
+}
+
+.col-aside .sub {
+    color: #9e9c99;
+    font-size: 15px;
+    line-height: 19px;
+    margin: 10px 0 0 25px;
+    font-weight: normal;
+}
+
+.col-aside .status p {
+    display: block;
+    margin-left: 25px;
+}
+
+.col-aside .status h3 .sub {
+    margin: 0 0 0 10px;
+}
+
+.col-aside .status h3 .sub a {
+    color: #9e9c99;;
+    text-decoration: none;
+    border-bottom: 1px dashed #9e9c99;
+}
+
+.col-aside .status.stopped {
+    
+}
+
+.col-aside .status.stopped h3 {
+    background-image: url('../images/icons-sprite/status-stopped.png');
+}
+
+.col-aside .status.outSyncSystem h3 {
+    background-image: url('../images/icons-sprite/status-stopped.png');
+}
+.col-aside .status.running {
+    
+}
+
+.col-aside .status.running h3 {
+    background-image: url('../images/icons-sprite/status-running.png');
+}
+
+.col-aside .status.errorSystem {
+    
+}
+
+.col-aside .status.errorSystem h3 {
+    background-image: url('../images/icons-sprite/status-stopped.png');
+}
+
+.col-aside .status.error {
+    background: #ffe8e9;
+    padding: 10px;
+}
+
+.col-aside .status.error h3 {
+    background-image: url('../images/icons-sprite/status-error.png');
+}
+
+.col-aside button[name="restart"] {
+    background-image: url('../images/icons-sprite/working.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    text-indent: 10px;
+}
+
+.col-aside button[name="reboot"] {
+    background-image: url('../images/icons-sprite/reload.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    text-indent: 10px;
+	margin-top: 2px;
+}
+
+
+/* icons */
+.icon.appliance-green {
+    background-image: url('../images/icons-sprite/appliance-settings.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 27px;
+    height: 27px;
+    vertical-align: middle;
+}
+
+.icon.edit-item {
+    background-image: url('../images/icons-sprite/edit-item.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 13px;
+    height: 13px;
+    vertical-align: middle;
+}
+
+.icon.save-item {
+    background-image: url('../images/icons-sprite/save-item.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+}
+
+.icon.remove-item {
+    background-image: url('../images/icons-sprite/remove-item.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 13px;
+    height: 12px;
+    vertical-align: middle;
+}
+
+.icon.move-item {
+    background-image: url('../images/icons-sprite/move-item-inactive.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 14px;
+    height: 23px;
+    vertical-align: middle;
+}
+.icon.move-item:hover {
+	background-image: url('../images/icons-sprite/move-item-active.png');
+}
+
+.circle:before {
+    content: ' \25CF';
+}
+
+#ot_list {
+	width: 90px;
+}
+
+#sortable tbody tr:hover {
+	cursor: move;
+}
+
+.icon:hover {
+	cursor: pointer;
+}
+
+#ot_list .icon {
+    margin: 0 5px;
+    display: inline-block;	
+}
+
+#applianceSettings label.error {
+	color: #FB3A3A;
+	font-weight: bold;
+}
+
+.ui-button.restartButton {
+	background-color: red;
+}
+
+.header-msg {
+	position: relative;
+    background: rgba(255, 238, 191, 0.9);
+    border: 1px solid #E5E5E4;
+    min-height: initial;
+    color: #837C75;
+    padding: 0;
+	height: 46px;
+	padding: 10px 1em 10px 1em;
+	margin-left: 1%;
+	margin-right: 2.5%;
+	margin-top: 20px;
+}
+.rectangle-icon {
+	background-image: url('../images/icons-sprite/rectangle.png');
+	width: 34px;
+	height:27px;
+	display: inline-block;
+	position: relative;
+}
+.question-mark-icon {
+	background-image: url('../images/icons-sprite/question-mark.png');
+	display: inline-block;
+	position: absolute;
+	width: 4px;
+	height: 13px;
+	left: 14px;
+	top: 10px;
+}
+.header-msg-main {
+	display: inline-block;
+	margin: 0px 0px 0px 0.3em;
+	vertical-align: top;
+	
+}

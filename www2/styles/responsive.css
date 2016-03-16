@@ -1,0 +1,100 @@
+.site-nav .site-nav-list .nav-item:first-child{
+	display:none;
+}
+
+span.icon.menu {
+	background: url('../../images/icons-sprite/sprite.png') no-repeat top left;
+	background-position: -66px -508px;
+	width: 32px;
+	height: 30px;
+}
+
+@media screen and (max-width: 1280px) {
+    body {
+        width: 100% !important;
+		overflow: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .site-nav-messages, .site-nav-contacts, .site-nav-templates, .site-nav-survey, .site-nav-help, .site-nav-users, .site-nav-destination, .site-nav-custom, .site-nav-global, .admin-item-link {
+		padding: 1.4em 1em;
+		white-space: nowrap;
+	}
+	.profile-link{
+		width: 175px;
+	}	
+	.actions {
+		padding:0;
+	}
+	.col{
+		padding:0;
+	}
+	.col-header{
+		padding: 0.1em 0.5em;
+	}
+}
+
+@media screen and (max-width: 960px) {
+    .profile-name, .profile-link br, .user-and-admin {
+		display: none;
+	}	
+	.profile-link{
+		width: inherit;
+	}
+	
+	.site-nav{
+		float:none;
+		position:absolute;
+		right:85px;
+		z-index:900;
+	}
+		.site-nav .site-nav-list{
+			padding:0 10px;			
+		}
+			.site-nav .site-nav-list .nav-item{
+				float:none;				
+				display:none;				
+			}
+				.site-nav .site-nav-list .nav-item:first-child{
+					display:block;
+				}
+					.site-nav .site-nav-list .nav-item:first-child .icon{
+						display:block;
+						margin:auto;
+					}
+				.site-nav-messages, .site-nav-contacts, .site-nav-templates, .site-nav-survey, .site-nav-help, .site-nav-users, .site-nav-destination, .site-nav-custom, .site-nav-global, .admin-item-link {
+					width:125px;
+				}
+			.site-nav .site-nav-list:hover {
+				background: #655D57;
+			}
+				.site-nav .site-nav-list:hover .nav-item{
+					display:block;
+				}
+	.page-container{
+		margin:0;
+	}
+	.col{
+		float: none;
+		clear: both;
+	}
+		.col-aside{
+			width:100%;
+		}
+		.col-body .col-body-list{
+			padding:0;
+		}
+		.col-body .col-body-items {
+			float:left;
+			padding: 1em;
+		}
+	.actions{
+		float: none;
+		display: inline-block;
+		padding-left: 25px;
+	}
+	.main-content{
+		width:100%;
+	}
+}

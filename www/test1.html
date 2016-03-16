@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+    <title>EGG PLANT</title>
+	<img src='LAYCG.GIF' alt='Laying Chicken' align='left' width='110' height='89' />
+	<img src='LAYCH.GIF' alt='Laying Chicken' align='right' width='110' height='89' />  
+    <!--<link rel="stylesheet" href="mystyle.css"/>-->
+    <script type="text/javascript" src="js/commons.js"></script>
+             
 <style>
-p {
-    color: red;
-    text-align: center;
-} 
+h1
+{
+   text-align: center;
+}
+body {
+    margin-right: 0px;
+    background-attachment: fixed;
+    padding-bottom:100%; /* Height of the footer element */
+	background-color:#1B1B1B;
+	background-image: url("chk2.jpg");
+	background-size:100% auto;
+	background-repeat: no-repeat;
+	max-height:100%;
+	max-width:100%;
+	position:relative;
+}
+#wrapper {
+	background:#BF9FFF;
+	min-height:100%;
+	position:relative;
+}
+#header {
+	background:#BF9FFF;
+	padding:15px;
+    margin-bottom: 20px;
+	text-align: center;
+	color: white;
+}
 table {
     display: table;
     border-collapse: separate;
     border-spacing: 2px;
     border-color: #B8B8B4;
 }
-Table2 {
-    border: 2px #000000 solid;
-    background-color: #9370DB;
-    border-spacing: 0px;
-}
 .content {
     width: 40%;
     height: 275px;
     padding: 10px 15px;
-        padding-top: 10px;
+        padding-top: 70px;
         padding-right: 15px;
         padding-bottom: 10px;
         padding-left: 15px;
@@ -87,15 +114,6 @@ td.right {
 table td {
     font-size: 14.25px;
 }
-element {
-    position: absolute;
-    left: 621px;
-    top: 451px;
-    width: 63px;
-    height: 19px;
-    line-height: 19px;
-    z-index: 8;
-}
 #Editbox1 {
     border: 1px solid #A9A9A9;
     background-color: #FFF;
@@ -106,7 +124,69 @@ element {
     text-align: left;
     vertical-align: middle;
 }
+#Editbox2 {
+    border: 1px solid #A9A9A9;
+    background-color: #FFF;
+    color: #000;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: left;
+    vertical-align: middle;
+}
+#Button1 {
+    border: 1px solid #A9A9A9;
+    background-color: #F0F0F0;
+    color: #000;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+    display:inline-block;
+}
+#Button2 {
+    border: 1px solid #A9A9A9;
+    background-color: #F0F0F0;
+    color: #000;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+    display:inline-block;
+}
+#Button3 {
+    border: 1px solid #A9A9A9;
+    background-color: #F0F0F0;
+    color: #000;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+}
+#Button4 {
+    border: 1px solid #A9A9A9;
+    background-color: #F0F0F0;
+    color: #000;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+}
+#Button5 {
+    border: 1px solid #A9A9A9;
+    background-color: #F0F0F0;
+    color: #000;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+}
+#Button6 {
+    border: 1px solid #A9A9A9;
+    background-color: #F0F0F0;
+    color: #000;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+}
 </style>
+    <h1>The Egg Plant</h1>
+    <hr></hr>
 </head>
 <body>
 
@@ -150,35 +230,55 @@ element {
             <tr>
                 <td class="first">Maximum Temperature:</td>
                 <td>
-                    <input class="number0 right" id="Editbox1" style="position:absolute;width:50%" name="MaxTemp" value="" maxlength="3" required="" type="number">
+                    <input class="number0 right" id="MaxTemp" style="position:relative;width:50%;" name="MaxTemp" value="" maxlength="3" required="" type="number">
                 degrees </td>
                 <!--<td class="last" id="inside-temp-value">87 degrees </td>-->
             </tr>
             <tr>
                 <td class="first">Minimum Temperature: </td>
                 <td>
-                    <input class="number0" id="min-temp" style="position:absolute;width:50%" name="MaxTemp" value="" maxlength="3" required="" type="number">
+                    <input class="number0" id="MinTemp" style="position:relative;width:50%;" name="MinTemp" value="" maxlength="3" required="" type="number">
                 degrees </td>
             </tr>
             <tr>
                 <td class="first" id="door">Door: </td>
-                <td class="last" id="door-value">Open</td>
+                <td>
+                    <input class="Button1" id="DoorOpen" name="DoorOpen" value="Open" style="position:relative;width:45%;" type="button">
+                    <input class="Button2" id="DoorClose" name="DoorClose" value="Close" style="position:relative;width:45%;display:inline-block;" type="button">
+                </td>
             </tr>
             <tr>
                 <td class="first" id="inside-light">Inside Light: </td>
-                <td class="last" id="inside-light-value">On</td>
+                <td>
+                    <input class="number0" id="InsideLightOn" name="InsideLightOn" value="On" style="position:relative;width:45%;" type="button">
+                    <input class="number0" id="InsideLightOff" name="InsideLightOff" value="Off" style="position:relative;width:45%;display:inline-block;" type="button">
+                </td>
             </tr>
             <tr>
                 <td class="first" id="outside-light">Outside Light: </td>
-                <td class="last" id="outside-light-value">On</td>
+                <td>
+                    <input class="number0" id="OutsideLightOn" name="OutsideLightOn" value="On" style="position:relative;width:45%;" type="button">
+                    <input class="number0" id="OutsideLightOff" name="OutsideLightOff" value="Off" style="position:relative;width:45%;display:inline-block;" type="button">
+                </td>
             </tr>
             <tr>
                 <td class="first" id="heat-lamp">Heat Lamp: </td>
-                <td class="last" id="heat-lamp-value">Off</td>
+                <td>
+                    <input class="number0" id="HeatLampOn" name="HeatLampOn" value="On" style="position:relative;width:45%;" type="button">
+                    <input class="number0" id="HeatLampOff" name="HeatLampOff" value="Off" style="position:relative;width:45%;display:inline-block;" type="button">
+                </td>
             </tr>
             <tr>
                 <td class="first" id="fan">Fan: </td>
-                <td class="last" id="fan-value">Off</td>
+                <td>
+                    <input class="number0" id="FanOn" name="FanOn" value="On" style="position:relative;width:45%;" type="button">
+                    <input class="number0" id="FanOff" name="FanOff" value="Off" style="position:relative;width:45%;display:inline-block;" type="button">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="number0" id="Save" name="Save" value="Save" style="position:relative;width:45%;" type="button">
+                </td>
             </tr>
 </table>
 </div>
