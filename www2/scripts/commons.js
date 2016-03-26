@@ -650,3 +650,9 @@ function clearCommonPageData()
 	$("#framing_type").empty();
 	
 }
+
+function onClickOfWebcam()
+{
+    //window.location.href = "http://10.10.10.130";
+    window.open("http://10.10.10.130");
+}

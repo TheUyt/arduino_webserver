@@ -44,8 +44,8 @@
   width: 78%/*different value*/; }
   
 .page-header {
-background: #655D57;
-color: #b2b0ad;
+background: #BF9FFF;
+color: #E8E7E6;
 *zoom: 1;
 -webkit-user-select: none;
 -moz-user-select: none;
@@ -85,7 +85,7 @@ padding:0; }
     float: left; }	
 
 .nav-item-link, .admin-item-link {
-  color: #b2b0ad;
+  color: #E8E7E6;
   float: left;
   font-size: 1em;
   font-weight: 600;
@@ -147,8 +147,8 @@ padding:0; }
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
-  background: #f68c00;
-  border: 1px solid #dd7d00;
+  background: #BF9FFF;
+  border: 1px solid #BF9FFF;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
@@ -177,8 +177,8 @@ padding:0; }
     display: block;
     width: 100%; }
   .button:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover {
-    background: #bf6c00;
-    border: 1px solid #c36e00;
+    background: #9370DB;
+    border: 1px solid #9370DB;
     text-decoration: none; }
 	.button.clear, button.clear, input[type="submit"].clear, input[type="button"].clear {
     background: none;
@@ -451,7 +451,7 @@ a{
 	  text-decoration:underline;}
 	  
  hr {
-  border: 1px solid #E5E5E4; }
+  border: 1px solid #9370DB; }
   
  h1, h2 {
 	font-weight:400;
@@ -583,7 +583,7 @@ a:hover span.tooltips, button:hover span.tooltips  {
 .admin-item-link:hover {
     color: #fff; }
   .admin-item-link:hover, .admin-item-link.current{
-	background:#766D66;
+	background:#9370DB;
 	color: #E8E7E6; 
   }	
  
@@ -754,10 +754,10 @@ a:hover span.tooltips, button:hover span.tooltips  {
 					display:block;
 				}
 					.page-header-submenu .submenu .submenu-item:hover .droplist a{
-						color: #b2b0ad;
+						color: #E8E7E6;
 					}
 						.page-header-submenu .submenu .submenu-item:hover .droplist a:hover{
-							color: #b2b0ad;
+							color: #E8E7E6;
 						}
 .droplist {
 	position:absolute;
@@ -840,7 +840,7 @@ a:hover span.tooltips, button:hover span.tooltips  {
 	}
 		
 .search-details {
-	 border: 1px solid #E5E5E4;
+	 border: 1px solid #9370DB;
 	 padding: .5em;
 	 margin-bottom:25px;
 	 background: #f9f9f6;
@@ -1519,12 +1519,12 @@ select {
 .main-container {
   position: relative;
   background: white;
-  border: 1px solid #E5E5E4;
+  border: 1px solid #9370DB;
   min-height: 500px; 
-  color:#837C75;}
+  color:#E8E7E6;}
   .main-container .main-header {
-    background: #F9F9F5;
-    border-bottom: 1px solid #E5E5E4;
+    background: #BF9FFF;
+    border-bottom: 1px solid #9370DB;
     width: 100%;
     padding: 10px 1em; }
     .main-container .main-header .main-title {
@@ -1540,7 +1540,7 @@ select {
     padding: 1em;
     min-height: 600px;}	
   .main-container .main-footer {
-    background: #F2F2F2;
+    background: #BF9FFF;
     width: 100%;
     padding: 10px 1em; }
  
@@ -1579,7 +1579,7 @@ td {
   color: #000000; }
   
 .table-head {
-  color: #b2b0ad; 
+  color: #E8E7E6; 
   }
 
 .subject-th-width { width:30%;}/* width of title/subjects th in mails table*/
@@ -1587,7 +1587,7 @@ td {
 /* search message/alerts //////////////////////////////*/
 
 .serch-messages{
-  border: 1px solid #E5E5E4;
+  border: 1px solid #9370DB;
   padding: 1em;
   margin-bottom:25px;
   background-color: #F9F9F5;
@@ -1602,7 +1602,7 @@ td {
 /*contact page*/
 
 .serch-contact{
-  border: 1px solid #E5E5E4;
+  border: 1px solid #9370DB;
   padding: 1em;
   margin-bottom:25px;
 }
@@ -1648,7 +1648,7 @@ td {
 /* 5 steps messages ///////////////////////////////////////////////////////////////////////////////////*/
 
 .five-steps-message {
-	border-bottom: 1px solid #E5E5E4;
+	border-bottom: 1px solid #9370DB;
 	padding-bottom: 12px;
 	display: block;
 }
@@ -2022,7 +2022,7 @@ fieldset{
 
 .write-message {
 	background: white;
-	border: 1px solid #E5E5E4;
+	border: 1px solid #9370DB;
 	width: 103.3%;
 	margin-left: -1.3em;
 	margin-top:20px;
@@ -2030,7 +2030,7 @@ fieldset{
 }
 	.write-message header {
 		background: #fcfcfc;
-		border-bottom: 1px solid #E5E5E4;
+		border-bottom: 1px solid #9370DB;
 		width: 100%;
 		padding: 10px 1em;
 	}
@@ -2055,8 +2055,8 @@ fieldset{
 			resize:none;
 		}	
 	.write-message footer {
-		background: #F2F2F2;
-		border-top: 1px solid #E5E5E4;
+		background: #BF9FFF;
+		border-top: 1px solid #9370DB;
 		width: 100%;
 		padding: 10px 1em;
 	}
@@ -2073,7 +2073,7 @@ fieldset{
 		padding-bottom:25px;		
 	}
 	.new-survey-question .new-question {
-		border-bottom: 1px solid #E5E5E4;
+		border-bottom: 1px solid #9370DB;
 	}	
 		.new-survey-question .new-question button{
 			margin-top:-35px;

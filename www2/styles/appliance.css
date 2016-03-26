@@ -201,9 +201,9 @@ form input[type="checkbox"] {
 .col-aside {
     position: relative;
     background: white;
-    border: 1px solid #E5E5E4;
+    border: 1px solid #9370DB;
     min-height: initial;
-    color: #837C75;
+    color: #E8E7E6;
     width: 18%;
     margin: 0 1%;
     padding: 0;
@@ -217,8 +217,8 @@ form input[type="checkbox"] {
 }
 
 .col-aside .aside-header {
-    background: #F9F9F5;
-    border-bottom: 1px solid #E5E5E4;
+    background: #BF9FFF;
+    border-bottom: 1px solid #9370DB;
     width: 100%;
     padding: 10px 1em;    
 }
@@ -423,7 +423,7 @@ form input[type="checkbox"] {
 .header-msg {
 	position: relative;
     background: rgba(255, 238, 191, 0.9);
-    border: 1px solid #E5E5E4;
+    border: 1px solid #9370DB;
     min-height: initial;
     color: #837C75;
     padding: 0;
